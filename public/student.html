@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Navbar</title>
+    <link rel="stylesheet" href="./css /signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script src="../myapp/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="logo">
+                    <!-- Add your logo image here -->
+                
+                </div>
+            </div>
+            <div class="menu">
+                <div class="item"><img src="coin .png" alt="Coins" style="margin-left: 5px;"></div>
+                <div class="item" style="padding-right:1cap;">Notifications
+                    
+                </div>
+                <div class="profile" onclick="toggleDropdown()">
+                    <img src="user.png" alt="User Profile">
+                    <div class="name">Kiran</div>
+                    <div class="dropdown" id="dropdownMenu">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.closest('.profile')) {
+                const dropdowns = document.getElementsByClassName('dropdown');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+      <div id="job-listings"></div>
+      <script>
+          fetch('/jobs')
+              .then(response => response.json())
+              .then(data => {
+                  const jobListingsDiv = document.getElementById('job-listings');
+                  data.forEach(job => {
+                      const jobCard = document.createElement('div');
+                      jobCard.classList.add('job-card');
+  
+                      jobCard.innerHTML = `
+                          <h3>${job.title}</h3>
+                          <div class="company">${job.company}</div>
+                          <div class="location">${job.location}</div>
+                          <div class="skills">Skills: ${job.skills}</div>
+                          <div class="salary">Salary: ${job.salary}</div>
+                          <div class="experience">Experience: ${job.experience}</div>
+                          <div class="openings">Openings: ${job.openings}</div>
+                          <div class="start-date">Start Date: ${job.start_date}</div>
+                          <div class="probation-duration">Probation Duration: ${job.probation_duration}</div>
+                          <div class="posted-on">Posted on: ${new Date(job.posted_on).toLocaleDateString()}</div>
+                      `;
+  
+                      jobListingsDiv.appendChild(jobCard);
+                  });
+              })
+              .catch(error => console.error('Error:', error));
+      </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 150px;
+}
+
+.logo {
+    background-image: url("/public/logo.png");
+
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+
+.nav-bar .menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .menu .item {
+    margin-left: 20px;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .menu .item img {
+    margin-right: 15px;
+    height: 50px;
+    width: 120px;
+}
+
+.nav-bar .profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 0cm;
+     align-items: center;
+     height: 50px;
+     width: 110px;
+     border: 1px solid white;
+    padding-left: 10px;
+}
+
+.nav-bar .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  
+}
+
+.nav-bar .profile .name {
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-bar .profile .dropdown a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-bar .profile .dropdown a:hover {
+    background-color: #f1f1f1;
+}
+.job-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+.job-card h3 {
+    margin: 0;
+    font-size: 24px;
+}
+.job-card .company {
+    color: #777;
+}
+.job-card .location {
+    color: #555;
+}
+.job-card .skills, .job-card .salary, .job-card .experience, .job-card .openings, .job-card .start-date, .job-card .probation-duration {
+    margin-top: 10px;
+}
+.job-card .posted-on {
+    color: #aaa;
+}

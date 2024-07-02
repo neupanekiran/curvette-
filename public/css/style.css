@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box; /* Changed from border: border-box; */
+}
+
+.nav-bar {
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start; /* Changed from space-evenly */
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 150px;
+}
+
+.logo {
+    background-image: url("/public/logo.png");
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+   align-items: center;
+}
+.body-all {
+
+    display: flex;
+}
+.company {
+     background-image: url("/public/company.png");
+     background-size: cover;
+     height: 60rem;
+     width: 42rem;
+   justify-content: flex-start;
+}
+.right-section {
+    width: 50rem;
+    padding: 40px;
+    align-items: center;
+    margin-top:  150px;
+     
+
+}
+
+
+.form-container {
+    width: 20rem;
+    height: 10rem; 
+    text-align: top;
+    align-items: top;
+    margin: auto;
+     
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.create-account {
+    display: block;
+    margin-bottom: 20px;
+    color: #00008b;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: right;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.toggle-password {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 20px;
+    color: #00008b;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: right;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00008b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
